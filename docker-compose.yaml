@@ -1,3 +1,2 @@
 include:
   - op-env-file-sync.yaml
-  - test.yaml

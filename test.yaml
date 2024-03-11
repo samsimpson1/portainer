@@ -1,5 +1,0 @@
-services:
-  test:
-    image: alpine:3.19
-    command: 'sh -c "env; sleep 99999"'
-    env_file: /secrets/secrets.env
