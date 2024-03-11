@@ -2,11 +2,12 @@ services:
   caddy-internal:
     image: "caddy:latest"
     restart: unless-stopped
+    command: "caddy run -c /Caddyfile"
     env_file: /secrets/secrets.env
     ports:
       - "6998:6998"
       - "6999:6999"
     volumes:
-      - ./internal.Caddyfile:/etc/caddy/Caddyfile
+      - ./internal.Caddyfile:/Caddyfile
       - /caddy_config_i/config:/config
       - /caddy_config_i/data:/data
