@@ -1,0 +1,14 @@
+{
+  acme_dns cloudflare {$CERT_MANAGER_CLOUDFLARE_PASSWORD}
+  storage file_system /data
+  http_port 6998
+  https_port 6999
+}
+
+*.int.simpson.id {
+
+  @test host test.int.simpson.id
+  handle @test {
+    respond "Test"
+  }
+}

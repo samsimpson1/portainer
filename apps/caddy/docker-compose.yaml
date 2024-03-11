@@ -1,0 +1,12 @@
+services:
+  caddy-internal:
+    image: "caddy:2.7"
+    restart: unless-stopped
+    env_file: /secrets/secrets.env
+    ports:
+      - "6998:6998"
+      - "6999:6999"
+    volumes:
+      - ./internal.Caddyfile:/etc/caddy/Caddyfile
+      - /caddy_config_i/config:/config
+      - /caddy_config_i/data:/data

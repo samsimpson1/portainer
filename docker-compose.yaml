@@ -1,2 +1,3 @@
 include:
   - op-env-file-sync.yaml
+  - apps/caddy/docker-compose.yaml
