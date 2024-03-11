@@ -1,5 +1,5 @@
 {
-  acme_dns cloudflare {$CERT_MANAGER_CLOUDFLARE_PASSWORD}
+  acme_dns cloudflare {env.CERT_MANAGER_CLOUDFLARE_PASSWORD}
   storage file_system /data
   http_port 6998
   https_port 6999
