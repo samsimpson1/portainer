@@ -10,11 +10,6 @@ services:
       - "6998:6998"
       - "6999:6999"
     volumes:
+      - ./internal.Caddyfile:/Caddyfile
       - /caddy_config_i/config:/config
       - /caddy_config_i/data:/data
-    configs:
-      - source: internal-caddyfile
-        target: /Caddyfile
-configs:
-  internal-caddyfile:
-    file: ./internal.Caddyfile

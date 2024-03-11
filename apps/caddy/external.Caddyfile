@@ -1,0 +1,16 @@
+{
+  acme_dns cloudflare {env.CERT_MANAGER_CLOUDFLARE_PASSWORD}
+  email acme@sams.wtf
+  acme_ca https://acme-v02.api.letsencrypt.org/directory
+  storage file_system /data
+  http_port 6996
+  https_port 6997
+}
+
+*.srv.simpson.id {
+
+  @test host test.int.simpson.id
+  handle @test {
+    respond "Test"
+  }
+}
