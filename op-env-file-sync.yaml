@@ -1,0 +1,7 @@
+services:
+  sync:
+    image: "ghcr.io/samsimpson1/op-env-file-sync:latest"
+    environment:
+      - OP_SERVICE_ACCOUNT_TOKEN=${OP_SERVICE_ACCOUNT_TOKEN}
+    volumes:
+      - /secrets:/out:rw
