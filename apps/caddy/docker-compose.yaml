@@ -1,6 +1,8 @@
 services:
   caddy-internal:
-    image: "caddy:latest"
+    build:
+      context: .
+      dockerfile: Containerfile
     restart: unless-stopped
     command: "caddy run -c /Caddyfile"
     env_file: /secrets/secrets.env
