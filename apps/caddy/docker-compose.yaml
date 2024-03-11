@@ -1,6 +1,6 @@
 services:
   caddy-internal:
-    image: "caddy:2.7"
+    image: "caddy:latest"
     restart: unless-stopped
     env_file: /secrets/secrets.env
     ports:
