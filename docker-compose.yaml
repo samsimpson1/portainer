@@ -1,2 +1,2 @@
 include:
-  op-env-file-sync.yaml
+  - op-env-file-sync.yaml
