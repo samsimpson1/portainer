@@ -1,5 +1,7 @@
 {
   acme_dns cloudflare {env.CERT_MANAGER_CLOUDFLARE_PASSWORD}
+  email acme@sams.wtf
+  acme_ca https://acme-v02.api.letsencrypt.org/directory
   storage file_system /data
   http_port 6998
   https_port 6999
