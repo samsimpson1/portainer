@@ -11,5 +11,19 @@ services:
       - "6999:6999"
     volumes:
       - ./internal.Caddyfile:/Caddyfile
-      - /caddy_config_i/config:/config
-      - /caddy_config_i/data:/data
+      - /opt/container_config/caddy/internal/config:/config
+      - /opt/container_config/caddy/internal/data:/data
+  caddy-external:
+    build:
+      context: .
+      dockerfile: Containerfile
+    restart: unless-stopped
+    command: "caddy run -c /Caddyfile"
+    env_file: /secrets/secrets.env
+    ports:
+      - "6996:6996"
+      - "6997:6997"
+    volumes:
+      - ./external.Caddyfile:/Caddyfile
+      - /opt/container_config/caddy/external/config:/config
+      - /opt/container_config/caddy/external/data:/data

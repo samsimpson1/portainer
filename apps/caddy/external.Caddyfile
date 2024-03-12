@@ -9,8 +9,13 @@
 
 *.srv.simpson.id {
 
-  @test host test.int.simpson.id
+  @test host test.srv.simpson.id
   handle @test {
     respond "Test"
   }
+}
+
+sams.wtf {
+  root * /secrets
+  file_server
 }
