@@ -9,13 +9,13 @@
 
 *.srv.simpson.id {
 
-  @test host test.srv.simpson.id
-  handle @test {
-    respond "Test"
+  @sharex host sharex.srv.simpson.id
+  handle @sharex {
+    root * /srv/containers/storage/ssd/sharex
+    file_server
   }
 }
 
 sams.wtf {
-  root * /srv/containers/storage/ssd/sharex
-  file_server
+  respond "Nope"
 }
