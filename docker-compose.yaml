@@ -1,3 +1,4 @@
 include:
-  - op-env-file-sync.yaml
   - apps/caddy/docker-compose.yaml
+  - apps/freshrss/docker-compose.yaml
+  - apps/op-env-file-sync/docker-compose.yaml

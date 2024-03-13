@@ -1,0 +1,9 @@
+services:
+  freshrss:
+    image: freshrss/freshrss:1.23.1
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/London
+      - CRON_MIN=15,30,45,0
+    volumes:
+      - /srv/containers/storage/ssd/freshrss:/var/www/FreshRSS/data

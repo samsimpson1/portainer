@@ -9,6 +9,10 @@
 }
 
 *.srv.simpson.id {
+  @rss host rss.srv.simpson.id
+  handle @rss {
+    reverse_proxy http://freshrss:80
+  }
 
   @sharex host sharex.srv.simpson.id
   handle @sharex {
