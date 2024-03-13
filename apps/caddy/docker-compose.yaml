@@ -5,25 +5,25 @@ services:
       dockerfile: Containerfile
     restart: unless-stopped
     command: "caddy run -c /Caddyfile"
-    env_file: /secrets/secrets.env
+    env_file: /srv/containers/storage/ssd//secrets/secrets.env
     ports:
-      - "6998:6998"
-      - "6999:6999"
+      - "80:80"
+      - "443:443"
     volumes:
       - ./internal.Caddyfile:/Caddyfile
-      - /opt/container_config/caddy/internal/config:/config
-      - /opt/container_config/caddy/internal/data:/data
+      - /srv/containers/storage/ssd/caddy/internal/config:/config
+      - /srv/containers/storage/ssd/caddy/internal/data:/data
   caddy-external:
     build:
       context: .
       dockerfile: Containerfile
     restart: unless-stopped
     command: "caddy run -c /Caddyfile"
-    env_file: /secrets/secrets.env
+    env_file: /srv/containers/storage/ssd/secrets/secrets.env
     ports:
       - "6996:6996"
       - "6997:6997"
     volumes:
       - ./external.Caddyfile:/Caddyfile
-      - /opt/container_config/caddy/external/config:/config
-      - /opt/container_config/caddy/external/data:/data
+      - /srv/containers/storage/ssd/caddy/external/config:/config
+      - /srv/containers/storage/ssd/caddy/external/data:/data

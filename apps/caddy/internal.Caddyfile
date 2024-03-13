@@ -3,8 +3,8 @@
   email acme@sams.wtf
   acme_ca https://acme-v02.api.letsencrypt.org/directory
   storage file_system /data
-  http_port 6998
-  https_port 6999
+  http_port 80
+  https_port 443
 }
 
 *.int.simpson.id {
