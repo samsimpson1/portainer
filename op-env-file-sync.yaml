@@ -1,8 +1,7 @@
 services:
   sync:
     image: "ghcr.io/samsimpson1/op-env-file-sync:latest"
-    user: 568
-    environment:
-      - OP_SERVICE_ACCOUNT_TOKEN=${OP_SERVICE_ACCOUNT_TOKEN}
+    user: "568"
+    env_file: /srv/containers/storage/ssd/op-env-file-sync/token.env
     volumes:
       - /srv/containers/storage/ssd/secrets:/out:rw
