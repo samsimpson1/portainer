@@ -9,6 +9,11 @@
 }
 
 *.srv.simpson.id {
+  @hass host hass.srv.simpson.id
+  handle @hass {
+    reverse_proxy http://home-assistant:8123
+  }
+  
   @rss host rss.srv.simpson.id
   handle @rss {
     reverse_proxy http://freshrss:80

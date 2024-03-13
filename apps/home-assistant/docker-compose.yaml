@@ -1,0 +1,10 @@
+services:
+  home-assistant:
+    image: ghcr.io/home-assistant/home-assistant:2023.12.4
+    restart: unless-stopped
+    network_mode: host
+    privileged: true
+    volumes:
+      - /srv/containers/storage/ssd/home-assistant:/config
+    devices:
+      - /dev/serial/by-id/usb-Silicon_Labs_Sonoff_Zigbee_3.0_USB_Dongle_Plus_0001-if00-port0:/dev/ttyUSB0
