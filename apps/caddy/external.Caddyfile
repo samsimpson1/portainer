@@ -5,6 +5,7 @@
   storage file_system /data
   http_port 6996
   https_port 6997
+  debug
 }
 
 *.srv.simpson.id {
