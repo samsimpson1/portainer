@@ -5,7 +5,7 @@ services:
       dockerfile: Containerfile
     restart: unless-stopped
     command: "caddy run -c /Caddyfile"
-    env_file: /srv/containers/storage/ssd//secrets/secrets.env
+    env_file: /srv/containers/storage/ssd/secrets/secrets.env
     ports:
       - "80:80"
       - "443:443"
