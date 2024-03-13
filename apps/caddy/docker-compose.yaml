@@ -14,6 +14,8 @@ services:
       - ./internal.Caddyfile:/Caddyfile
       - /srv/containers/storage/ssd/caddy/internal/config:/config
       - /srv/containers/storage/ssd/caddy/internal/data:/data
+    depends_on:
+      - prowlarr
   caddy-external:
     build:
       context: .

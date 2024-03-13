@@ -5,12 +5,12 @@
   storage file_system /data
   http_port 80
   https_port 443
+  debug
 }
 
 *.int.simpson.id {
-
-  @test host test.int.simpson.id
-  handle @test {
-    respond "Test"
+  @prowlarr host prowlarr.int.simpson.id
+  handle @prowlarr {
+    reverse_proxy http://prowlarr:80
   }
 }
