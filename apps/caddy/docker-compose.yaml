@@ -27,3 +27,4 @@ services:
       - ./external.Caddyfile:/Caddyfile
       - /srv/containers/storage/ssd/caddy/external/config:/config
       - /srv/containers/storage/ssd/caddy/external/data:/data
+      - /srv/containers/storage/ssd/sharex:/sharex:ro

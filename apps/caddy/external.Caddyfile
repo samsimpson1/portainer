@@ -12,7 +12,7 @@
 
   @sharex host sharex.srv.simpson.id
   handle @sharex {
-    root * /srv/containers/storage/ssd/sharex
+    root * /sharex
     file_server
   }
 }
