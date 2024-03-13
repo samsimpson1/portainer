@@ -1,0 +1,12 @@
+services:
+  plex:
+    image: ghcr.io/onedr0p/plex:rolling
+    restart: unless-stopped
+    user: "568"
+    network_mode: host
+    volumes:
+      - /srv/containers/storage/hdd/media:/media:ro
+      - /srv/containers/storage/ssd/plex:/data:rw
+      - /tmp/plex_transcode:/transcode:rw
+    devices:
+      - /dev/dri:/dev/dri

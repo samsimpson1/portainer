@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: Containerfile
+    user: "568"
     restart: unless-stopped
     command: "caddy run -c /Caddyfile"
     env_file: /srv/containers/storage/ssd/secrets/secrets.env
@@ -17,6 +18,7 @@ services:
     build:
       context: .
       dockerfile: Containerfile
+    user: "568"
     restart: unless-stopped
     command: "caddy run -c /Caddyfile"
     env_file: /srv/containers/storage/ssd/secrets/secrets.env

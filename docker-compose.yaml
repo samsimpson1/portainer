@@ -2,3 +2,4 @@ include:
   - apps/caddy/docker-compose.yaml
   - apps/freshrss/docker-compose.yaml
   - apps/op-env-file-sync/docker-compose.yaml
+  - apps/plex/docker-compose.yaml
