@@ -16,6 +16,7 @@ services:
       - /srv/containers/storage/ssd/caddy/internal/data:/data
     depends_on:
       - prowlarr
+      - qbittorrent
       - sabnzbd
       - sonarr
   caddy-external:

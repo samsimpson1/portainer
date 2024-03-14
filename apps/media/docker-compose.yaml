@@ -1,3 +1,4 @@
 include:
   - arr.yaml
+  - qbittorrent.yaml
   - sabnzbd.yaml

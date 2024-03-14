@@ -1,0 +1,14 @@
+services:
+  qbittorrent:
+    image: ghcr.io/onedr0p/qbittorrent:4.6.2
+    restart: unless-stopped
+    user: "568"
+    environment:
+      - TZ=Europe/London
+      - QBITTORRENT__PORT=80
+      - QBITTORRENT__BT_PORT=32760
+    ports:
+      - "32760:32760"
+    volumes:
+      - /srv/containers/storage/ssd/qbittorrent:/config:rw
+      - /srv/containers/storage/hdd/media:/media:rw
