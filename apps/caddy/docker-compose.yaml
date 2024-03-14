@@ -16,6 +16,7 @@ services:
       - /srv/containers/storage/ssd/caddy/internal/data:/data
     depends_on:
       - prowlarr
+      - sabnzbd
       - sonarr
   caddy-external:
     build:

@@ -1,0 +1,12 @@
+services:
+  sabnzbd:
+    image: ghcr.io/onedr0p/sabnzbd:4.2.1
+    restart: unless-stopped
+    user: "568"
+    environment:
+      - TZ=Europe/London
+      - SABNZBD__PORT=80
+      - SABNZBD__HOST_WHITELIST_ENTRIES=sabnzbd, sabnzbd.int.simpson.id
+    volumes:
+      - /srv/containers/storage/ssd/sabnzbd:/config:rw
+      - /srv/containers/storage/hdd/media:/media:rw
