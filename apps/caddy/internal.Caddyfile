@@ -19,6 +19,11 @@
     reverse_proxy http://qbittorrent:80
   }
 
+  @radarr host radarr.int.simpson.id
+  handle @radarr {
+    reverse_proxy http://radarr:80
+  }
+
   @sabnzbd host sabnzbd.int.simpson.id
   handle @sabnzbd {
     reverse_proxy http://sabnzbd:80

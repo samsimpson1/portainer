@@ -1,4 +1,14 @@
 services:
+  radarr:
+    image: ghcr.io/onedr0p/radarr-develop:5.3.6.8612
+    restart: unless-stopped
+    user: "568"
+    environment:
+      - TZ=Europe/London
+      - RADARR__PORT=80
+    volumes:
+      - /srv/containers/storage/ssd/radarr:/config:rw
+      - /srv/containers/storage/hdd/media:/media:rw
   prowlarr:
     image: ghcr.io/onedr0p/prowlarr-develop:1.12.2.4211
     restart: unless-stopped

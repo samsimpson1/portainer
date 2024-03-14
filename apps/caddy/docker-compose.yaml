@@ -17,6 +17,7 @@ services:
     depends_on:
       - prowlarr
       - qbittorrent
+      - radarr
       - sabnzbd
       - sonarr
   caddy-external:
