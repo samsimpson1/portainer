@@ -1,0 +1,12 @@
+services:
+  samba:
+    image: quay.io/samba.org/samba-server:latest
+    restart: unless-stopped
+    environment:
+      - SAMBACC_CONFIG=/config.json
+      - SAMBA_CONTAINER_ID=general
+    volumes:
+      - ./config.json:/config.json:ro
+      - /srv/containers/storage/hdd/media:/media:rw
+    ports:
+      - 445:445

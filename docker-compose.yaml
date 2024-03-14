@@ -5,3 +5,4 @@ include:
   - apps/media/docker-compose.yaml
   - apps/op-env-file-sync/docker-compose.yaml
   - apps/plex/docker-compose.yaml
+  - apps/samba/docker-compose.yaml
