@@ -1,0 +1,19 @@
+services:
+  prowlarr:
+    image: ghcr.io/onedr0p/prowlarr-develop:1.12.2.4211
+    restart: unless-stopped
+    user: "568"
+    environment:
+      - TZ=Europe/London
+      - PROWLARR__PORT=80
+    volumes:
+      - /srv/containers/storage/ssd/prowlarr:/config:rw
+  sonarr:
+    image: ghcr.io/onedr0p/sonarr-develop:4.0.0.752
+    restart: unless-stopped
+    user: "568"
+    environment:
+      - TZ=Europe/London
+    volumes:
+      - /srv/containers/storage/ssd/sonarr:/config:rw
+      - /srv/containers/storage/hdd/media:/media:rw

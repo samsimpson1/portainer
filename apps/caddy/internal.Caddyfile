@@ -13,4 +13,9 @@
   handle @prowlarr {
     reverse_proxy http://prowlarr:80
   }
+
+  @sonarr host sonarr.int.simpson.id
+  handle @sonarr {
+    reverse_proxy http://sonarr:8989
+  }
 }
