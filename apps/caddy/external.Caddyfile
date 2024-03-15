@@ -19,6 +19,11 @@
     reverse_proxy http://freshrss:80
   }
 
+  @requests host requests.srv.simpson.id
+  handle @requests {
+    reverse_proxy http://overseerr:80
+  }
+
   @sharex host sharex.srv.simpson.id
   handle @sharex {
     root * /sharex
