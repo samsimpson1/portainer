@@ -29,6 +29,10 @@
     root * /sharex
     file_server
   }
+
+  handle {
+    respond "Nothing to see here"
+  }
 }
 
 sams.wtf {
