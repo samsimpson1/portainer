@@ -9,6 +9,11 @@
 }
 
 *.srv.simpson.id {
+  @audiobookshelf host audiobookshelf.srv.simpson.id
+  handle @audiobookshelf {
+    reverse_proxy http://audiobookshelf:8080
+  }
+  
   @hass host hass.srv.simpson.id
   handle @hass {
     reverse_proxy http://home-assistant:8123

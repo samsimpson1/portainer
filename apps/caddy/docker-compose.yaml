@@ -37,6 +37,7 @@ services:
       - /srv/containers/storage/ssd/caddy/external/data:/data
       - /srv/containers/storage/ssd/sharex:/sharex:ro
     depends_on:
+      - audiobookshelf
       - freshrss
       - home-assistant
       - overseerr
