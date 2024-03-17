@@ -3,6 +3,11 @@
   "extends": [
     "config:base"
   ],
+  "docker-compose": {
+    "fileMatch": [
+      ".*\\.ya?ml$"
+    ]
+  },
   "packageRules": [
     {
       "matchPackageNames": [
