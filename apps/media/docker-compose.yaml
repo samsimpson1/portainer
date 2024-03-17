@@ -1,5 +1,6 @@
 include:
   - arr.yaml
+  - audiobookshelf.yaml
   - overseerr.yaml
   - qbittorrent.yaml
   - sabnzbd.yaml
