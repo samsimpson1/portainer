@@ -6,9 +6,56 @@
   http_port 6996
   https_port 6997
   debug
+
+  security {
+    oauth identity provider discord {
+      realm discord
+      driver discord
+      client_id {$CADDY_SECURITY_CLIENT_ID}
+      client_secret {$CADDY_SECURITY_CLIENT_SECRET}
+      scopes identify email guilds guilds.members.read
+      user_group_filters {$CADDY_SECURITY_GUILD_ID}
+    }
+
+    authentication portal discordportal {
+      crypto default token lifetime 3600
+      crypto key sign-verify {$CADDY_SECURITY_JWT_SHARED_SECRET}
+      enable identity provider discord
+      cookie domain simpson.id
+
+      transform user {
+        match role discord.com/{$CADDY_SECURITY_GUILD_ID}/role/{$CADDY_SECURITY_ADMIN_ROLE_ID}
+        action add role authp/admin
+      }
+    }
+
+    authorization policy authpol {
+      set auth url https://auth.srv.simpson.id/
+      crypto key verify {$CADDY_SECURITY_JWT_SHARED_SECRET}
+      allow roles authp/admin
+      validate bearer header
+      inject headers with claims
+    }
+  }
 }
 
 *.srv.simpson.id {
+  @auth host auth.srv.simpson.id
+  handle @auth {
+    route {
+      authenticate with discordportal
+    }
+  }
+
+  @authtest host authtest.srv.simpson.id
+  handle @authtest {
+    route {
+      authorize with authpol
+      respond "Success"
+    }
+  }
+
+
   @audiobookshelf host audiobookshelf.srv.simpson.id
   handle @audiobookshelf {
     reverse_proxy http://audiobookshelf:8080
