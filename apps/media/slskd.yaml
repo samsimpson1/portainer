@@ -5,6 +5,8 @@ services:
     user: "568"
     ports:
       - 34000:34000
+    environment:
+      - SLSKD_REMOTE_CONFIGURATION=true
     volumes:
       - /srv/containers/storage/ssd/slskd:/app:rw
       - /srv/containers/storage/hdd/media:/media:rw
