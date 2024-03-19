@@ -19,6 +19,7 @@ services:
       - qbittorrent
       - radarr
       - sabnzbd
+      - slskd
       - sonarr
   caddy-external:
     build:

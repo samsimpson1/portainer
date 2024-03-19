@@ -29,6 +29,11 @@
     reverse_proxy http://sabnzbd:80
   }
 
+  @slskd host slskd.int.simpson.id
+  handle @slskd {
+    reverse_proxy http://slskd:5030
+  }
+
   @sonarr host sonarr.int.simpson.id
   handle @sonarr {
     reverse_proxy http://sonarr:8989

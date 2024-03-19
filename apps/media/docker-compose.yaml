@@ -4,3 +4,4 @@ include:
   - overseerr.yaml
   - qbittorrent.yaml
   - sabnzbd.yaml
+  - slskd.yaml
