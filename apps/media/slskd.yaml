@@ -1,6 +1,6 @@
 services:
   slskd:
-    image: slskd/slskd:0.20.0
+    image: slskd/slskd:0.20.1
     restart: unless-stopped
     user: "568"
     ports:
