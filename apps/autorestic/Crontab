@@ -1,0 +1,1 @@
+15 */2 * * * /bin/bash -c "sudo -u app autorestic -c /autorestic.yaml"

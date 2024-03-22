@@ -1,0 +1,9 @@
+services:
+  autorestic:
+    build:
+      context: .
+      dockerfile: Containerfile
+    env_file: /srv/containers/storage/ssd/secrets/secrets.env
+    volumes:
+      - ./autorestic.yaml:/autorestic.yaml:ro
+      - /srv/containers/storage/ssd:/srv/containers/storage/ssd:ro

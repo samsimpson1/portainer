@@ -1,0 +1,11 @@
+version: 2
+
+locations:
+  appdata:
+    from: /srv/containers/storage/ssd
+    to: wasabi
+
+backends:
+  wasabi:
+    type: s3
+    path: "s3.eu-west-1.wasabisys.com/sam-container-backups"

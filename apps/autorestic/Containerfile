@@ -1,0 +1,13 @@
+FROM alpine:3.19
+
+RUN apk update; \
+  apk add ca-certificates restic bzip2 curl bash cronie sudo; \
+  curl -o /autorestic.bz2 -L https://github.com/cupcakearmy/autorestic/releases/download/v1.8.1/autorestic_1.8.1_linux_amd64.bz2; \
+  bunzip2 /autorestic.bz2; mv /autorestic /usr/bin/autorestic; \
+  chmod 755 /usr/bin/autorestic
+
+RUN addgroup -g 568 app; adduser -G app -u 568 -D app
+
+COPY Crontab /etc/cron.d/
+
+CMD crond -f
