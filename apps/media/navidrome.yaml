@@ -1,0 +1,17 @@
+services:
+  navidrome:
+    image: deluan/navidrome:latest
+    restart: unless-stopped
+    user: "568"
+    environment:
+      - TZ=Europe/London
+      - ND_BASEURL=https://navidrome.srv.simpson.id
+      - ND_SCANSCHEDULE=1h
+      - ND_LOGLEVEL=info
+      - ND_SESSIONTIMEOUT=24h
+      - ND_MUSICFOLDER=/media/music
+      - ND_DATAFOLDER=/config
+      - ND_CACHEFOLDER=/config/cache
+    volumes:
+      - /srv/containers/storage/ssd/navidrome:/config:rw
+      - /srv/containers/storage/hdd/media:/media:rw

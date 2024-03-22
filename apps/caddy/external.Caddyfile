@@ -65,6 +65,11 @@
   handle @hass {
     reverse_proxy http://home-assistant:8123
   }
+
+  @navidrome host navidrome.srv.simpson.id
+  handle @navidrome {
+    reverse_proxy http://navidrome:4533
+  }
   
   @rss host rss.srv.simpson.id
   handle @rss {

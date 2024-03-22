@@ -41,4 +41,5 @@ services:
       - audiobookshelf
       - freshrss
       - home-assistant
+      - navidrome
       - overseerr
