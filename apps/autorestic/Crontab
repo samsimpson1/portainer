@@ -1,1 +1,1 @@
-5 * * * * /bin/bash -c "sudo -u app autorestic -c /autorestic.yaml &> /dev/stdout"
+*/5 * * * * /bin/bash -c "sudo -u app autorestic backup -c /autorestic.yaml &> /dev/stdout"

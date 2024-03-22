@@ -6,8 +6,9 @@ RUN apk update; \
   bunzip2 /autorestic.bz2; mv /autorestic /usr/bin/autorestic; \
   chmod 755 /usr/bin/autorestic
 
-RUN addgroup -g 568 app; adduser -G app -u 568 -D app
+RUN addgroup -g 568 app; adduser -G app -u 568 -D app; \
+  touch /.autorestic.lock.yml; chown app:app /.autorestic.lock.yml
 
 COPY Crontab /etc/cron.d/
 
-CMD crond -fPs
+CMD crond -fPps
