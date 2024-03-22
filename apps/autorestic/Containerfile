@@ -10,4 +10,4 @@ RUN addgroup -g 568 app; adduser -G app -u 568 -D app
 
 COPY Crontab /etc/cron.d/
 
-CMD crond -f
+CMD crond -fPs
