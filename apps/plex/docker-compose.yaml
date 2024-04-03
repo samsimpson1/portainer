@@ -6,7 +6,7 @@ services:
     network_mode: host
     volumes:
       - /srv/containers/storage/hdd/media:/media:ro
-      - /srv/containers/storage/ssd/plex:/data:rw
+      - /srv/containers/storage/ssd/plex:/config:rw
       - /tmp/plex_transcode:/transcode:rw
     devices:
       - /dev/dri:/dev/dri
