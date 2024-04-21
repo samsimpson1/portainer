@@ -6,3 +6,4 @@ include:
   - qbittorrent.yaml
   - sabnzbd.yaml
   - slskd.yaml
+  - unpackerr.yaml
