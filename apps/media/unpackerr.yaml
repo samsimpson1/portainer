@@ -5,7 +5,7 @@ services:
     user: "568"
     env_file: /srv/containers/storage/ssd/secrets/secrets.env
     environment:
-      - UN_SONARR_0_URL="https://sonarr.int.simpson.id"
+      - UN_SONARR_0_URL=https://sonarr.int.simpson.id
       - UN_SONARR_0_PATHS_0=/media/torrent
     volumes:
       - /srv/containers/storage/hdd/media:/media:rw
