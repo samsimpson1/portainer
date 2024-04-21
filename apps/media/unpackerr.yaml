@@ -5,6 +5,8 @@ services:
     user: "568"
     env_file: /srv/containers/storage/ssd/secrets/secrets.env
     environment:
+      - UN_RADARR_0_URL=https://radarr.int.simpson.id
+      - UN_RADARR_0_PATHS_0=/media/torrent
       - UN_SONARR_0_URL=https://sonarr.int.simpson.id
       - UN_SONARR_0_PATHS_0=/media/torrent
     volumes:
