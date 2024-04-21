@@ -19,7 +19,7 @@ services:
     volumes:
       - /srv/containers/storage/ssd/prowlarr:/config:rw
   sonarr:
-    image: ghcr.io/onedr0p/sonarr:4.0.3
+    image: ghcr.io/onedr0p/sonarr:4.0.4
     restart: unless-stopped
     user: "568"
     environment:
