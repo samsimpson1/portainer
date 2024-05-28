@@ -1,6 +1,6 @@
 services:
   audiobookshelf:
-    image: ghcr.io/advplyr/audiobookshelf:2.9.0
+    image: ghcr.io/advplyr/audiobookshelf:2.10.1
     restart: unless-stopped
     user: "568"
     environment:
