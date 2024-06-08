@@ -1,5 +1,5 @@
 {
-  acme_dns cloudflare {env.CERT_MANAGER_CLOUDFLARE_PASSWORD}
+  acme_dns cloudflare {env.CADDY_CLOUDFLARE_API_KEY}
   email acme@sams.wtf
   acme_ca https://acme-v02.api.letsencrypt.org/directory
   storage file_system /data
