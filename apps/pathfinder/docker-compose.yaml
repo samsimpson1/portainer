@@ -1,0 +1,41 @@
+services:
+  pathfinder-redis:
+    image: redis:7
+    restart: unless-stopped
+    volumes:
+      - /srv/containers/storage/pathfinder/redis:/data
+  pathfinder-mariadb:
+    image: mariadb:11.4
+    restart: unless-stopped
+    env_file: /srv/containers/storage/ssd/secrets/pathfinder.env
+    volumes:
+      - /srv/containers/storage/ssd/pathfinder/mariadb:/var/lib/mysql
+  pathfinder-socket:
+    image: ghcr.io/goryn-clade/pf-websocket:latest
+    restart: unless-stopped
+    command: ["--tcpHost", "0.0.0.0"]
+  pathfinder:
+    image: ghcr.io/goryn-clade/pathfinder:latest
+    restart: unless-stopped
+    environment:
+      - DOMAIN=pathfinder.srv.simpson.id
+      - REDIS_HOST=pathfinder-redis
+      - REDIS_PORT=6379
+      - PATHFINDER_SOCKET_HOST=pathfinder-socket
+      - PATHFINDER_SOCKET_PORT=5555
+      - MYSQL_HOST=pathfinder-mariadb
+      - MYSQL_PORT=3306
+      - MYSQL_USER=root
+      - MYSQL_PF_DB_NAME=pathfinder
+      - MYSQL_UNIVERSE_DB_NAME=eve_universe
+      - MYSQL_CCP_DB_NAME=eve_lifeblood_min
+      - CCP_ESI_SCOPES=esi-location.read_online.v1,esi-location.read_location.v1,esi-location.read_ship_type.v1,esi-ui.write_waypoint.v1,esi-ui.open_window.v1,esi-universe.read_structures.v1,esi-corporations.read_corporation_membership.v1,esi-clones.read_clones.v1,esi-characters.read_corporation_roles.v1
+    env_file: /srv/containers/storage/ssd/secrets/pathfinder.env
+    volumes:
+      - ./config.ini:/var/www/html/pathfinder/app/templateConfig.ini
+      - ./pathfinder.ini:/var/www/html/pathfinder/app/pathfinder.ini
+      - ./plugin.ini:/var/www/html/pathfinder/app/plugin.ini
+    depends_on:
+      - pathfinder-redis
+      - pathfinder-mariadb
+      - pathfinder-socket

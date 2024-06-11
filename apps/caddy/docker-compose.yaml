@@ -43,3 +43,4 @@ services:
       - home-assistant
       - navidrome
       - overseerr
+      - pathfinder

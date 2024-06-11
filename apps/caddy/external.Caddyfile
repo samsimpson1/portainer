@@ -70,6 +70,11 @@
   handle @navidrome {
     reverse_proxy http://navidrome:4533
   }
+
+  @pathfinder host pathfinder.srv.simpson.id
+  handle @pathfinder {
+    reverse_proxy http://pathfinder:80
+  }
   
   @rss host rss.srv.simpson.id
   handle @rss {
