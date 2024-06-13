@@ -1,0 +1,8 @@
+services:
+  komga:
+    image: ghcr.io/gotson/komga:1.11.1
+    restart: unless-stopped
+    user: "568"
+    volumes:
+      - /srv/containers/storage/ssd/komga:/config
+      - /srv/containers/storage/hdd/media:/media

@@ -66,6 +66,11 @@
     reverse_proxy http://home-assistant:8123
   }
 
+  @komga host comics.srv.simpson.id
+  handle @komga {
+    reverse_proxy http://komga:25600
+  }
+
   @navidrome host navidrome.srv.simpson.id
   handle @navidrome {
     reverse_proxy http://navidrome:4533

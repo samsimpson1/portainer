@@ -41,6 +41,7 @@ services:
       - audiobookshelf
       - freshrss
       - home-assistant
+      - komga
       - navidrome
       - overseerr
       - pathfinder
