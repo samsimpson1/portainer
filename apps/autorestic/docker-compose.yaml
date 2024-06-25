@@ -7,3 +7,4 @@ services:
     volumes:
       - ./autorestic.yaml:/autorestic.yaml:ro
       - /srv/containers/storage/ssd:/srv/containers/storage/ssd:ro
+      - /srv/containers/storage/hdd/media/photo:/srv/containers/storage/hdd/media/photo:ro
