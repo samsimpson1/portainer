@@ -8,5 +8,6 @@ services:
     volumes:
       - ./config.json:/config.json:ro
       - /srv/containers/storage/hdd/media:/media:rw
+      - /srv/containers/storage/ssd/sharex:/sharex:rw
     ports:
       - 445:445

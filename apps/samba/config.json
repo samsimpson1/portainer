@@ -19,6 +19,14 @@
         "force user": "media",
         "read only": "no"
       }
+    },
+    "sharex": {
+      "options": {
+        "path": "/sharex",
+        "valid users": "media",
+        "force user": "media",
+        "read only": "no"
+      }
     }
   },
   "users": {
@@ -36,7 +44,8 @@
       "instance_name": "SAMBA",
       "instance_features": [],
       "shares": [
-        "media"
+        "media",
+        "sharex"
       ],
       "globals": [
         "default"
