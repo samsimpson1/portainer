@@ -1,0 +1,10 @@
+services:
+  garage:
+    image: dxflrs/amd64_garage:v1.0.0
+    restart: unless-stopped
+    user: "568"
+    env_file: /srv/containers/storage/ssd/secrets/secrets.env
+    command: /garage -c garage.toml server
+    volumes:
+      - /srv/containers/storage/hdd/garage:/storage:rw
+      - ./garage.toml:/garage.toml:ro

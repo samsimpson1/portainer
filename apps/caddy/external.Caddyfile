@@ -105,3 +105,15 @@
 sams.wtf {
   respond "Nope"
 }
+
+s3.sams.wtf {
+  reverse_proxy http://garage:3900
+}
+
+*.s3.sams.wtf {
+  reverse_proxy http://garage:3900
+}
+
+*.site.s3.sams.wtf {
+  reverse_proxy http://garage:3902
+}

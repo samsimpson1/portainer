@@ -9,6 +9,11 @@
 }
 
 *.int.simpson.id {
+  @garage host garage.int.simpson.id
+  handle @garage {
+    reverse_proxy http://garage:3903
+  }
+  
   @prowlarr host prowlarr.int.simpson.id
   handle @prowlarr {
     reverse_proxy http://prowlarr:80

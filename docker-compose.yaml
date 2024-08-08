@@ -2,6 +2,7 @@ include:
   - apps/autorestic/docker-compose.yaml
   - apps/caddy/docker-compose.yaml
   - apps/freshrss/docker-compose.yaml
+  - apps/garage/docker-compose.yaml
   - apps/home-assistant/docker-compose.yaml
   - apps/media/docker-compose.yaml
   - apps/op-env-file-sync/docker-compose.yaml

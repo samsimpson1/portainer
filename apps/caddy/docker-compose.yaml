@@ -15,6 +15,7 @@ services:
       - /srv/containers/storage/ssd/caddy/internal/config:/config
       - /srv/containers/storage/ssd/caddy/internal/data:/data
     depends_on:
+      - garage
       - prowlarr
       - qbittorrent
       - radarr
@@ -40,6 +41,7 @@ services:
     depends_on:
       - audiobookshelf
       - freshrss
+      - garage
       - home-assistant
       - komga
       - navidrome
