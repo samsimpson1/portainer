@@ -1,0 +1,11 @@
+services:
+  prometheus:
+    image: prom/prometheus:v2.54.0
+    restart: unless-stopped
+    user: "568"
+    command: --storage.tsdb.path /data --storage.tsdb.retention.size 10GB --config.file /config.yaml
+    volumes:
+      - /srv/containers/storage/ssd/prometheus:/data:rw
+      - ./prometheus-config.yaml:/config.yaml:ro
+    depends_on:
+      - prometheus-node-exporter

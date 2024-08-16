@@ -43,4 +43,9 @@
   handle @sonarr {
     reverse_proxy http://sonarr:8989
   }
+
+  @prometheus host prometheus.int.simpson.id
+  handle @prometheus {
+    reverse_proxy http://prometheus:9090
+  }
 }
