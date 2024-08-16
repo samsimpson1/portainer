@@ -48,4 +48,9 @@
   handle @prometheus {
     reverse_proxy http://prometheus:9090
   }
+
+  @grafana host grafana.int.simpson.id
+  handle @grafana {
+    reverse_proxy http://grafana:3000
+  }
 }

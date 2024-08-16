@@ -1,0 +1,9 @@
+services:
+  grafana:
+    image: grafana/grafana:11.1.4
+    restart: unless-stopped
+    user: "568"
+    environment:
+      - GF_SERVER_ROOT_URL=https://grafana.int.simpson.id
+    volumes:
+      - /srv/containers/storage/ssd/grafana:/var/lib/grafana
