@@ -4,6 +4,13 @@ locations:
   appdata:
     from: /srv/containers/storage/ssd
     to: wasabi
+    options:
+      forget:
+        keep-hourly: 48
+        keep-daily: 14
+        keep-weekly: 16
+        keep-monthly: 12
+        keep-yearly: 5
   photos:
     from: /srv/containers/storage/hdd/media/photo
     to: wasabi
