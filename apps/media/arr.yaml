@@ -1,6 +1,6 @@
 services:
   radarr:
-    image: ghcr.io/onedr0p/radarr:5.7.0
+    image: ghcr.io/onedr0p/radarr:5.10.4
     restart: unless-stopped
     user: "568"
     environment:
