@@ -1,6 +1,6 @@
 services:
   qbittorrent:
-    image: ghcr.io/onedr0p/qbittorrent:4.6.5
+    image: ghcr.io/onedr0p/qbittorrent:4.6.7
     restart: unless-stopped
     user: "568"
     environment:
