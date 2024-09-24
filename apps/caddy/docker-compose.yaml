@@ -49,3 +49,4 @@ services:
       - navidrome
       - overseerr
       - pathfinder
+      - pinchflat

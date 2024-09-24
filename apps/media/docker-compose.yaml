@@ -4,6 +4,7 @@ include:
   - komga.yaml
   - navidrome.yaml
   - overseerr.yaml
+  - pinchflat.yaml
   - qbittorrent.yaml
   - sabnzbd.yaml
   - slskd.yaml

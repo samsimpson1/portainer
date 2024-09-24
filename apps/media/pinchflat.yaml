@@ -1,0 +1,11 @@
+services:
+  pinchflat:
+    image: ghcr.io/kieraneglin/pinchflat:v2024.9.12
+    restart: unless-stopped
+    user: "568"
+    environment:
+      - TZ=Europe/London
+      - EXPOSE_FEED_ENDPOINTS=true
+    volumes:
+      - /srv/containers/storage/ssd/pinchflat:/config:rw
+      - /srv/containers/storage/hdd/media/youtube:/downloads:rw

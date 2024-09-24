@@ -36,6 +36,16 @@
       validate bearer header
       inject headers with claims
     }
+
+    authorization policy pinchflat {
+      set auth url https://auth.srv.simpson.id/
+      crypto key verify {$CADDY_SECURITY_JWT_SHARED_SECRET}
+      allow roles authp/admin
+      validate bearer header
+      inject headers with claims
+
+      bypass uri suffix /feed.xml
+    }
   }
 }
 
@@ -79,6 +89,14 @@
   @pathfinder host pathfinder.srv.simpson.id
   handle @pathfinder {
     reverse_proxy http://pathfinder:80
+  }
+
+  @pinchflat host pinchflat.srv.simpson.id
+  handle @pinchflat {
+    route {
+      authorize with pinchflat
+      reverse_proxy http://pinchflat:8945
+    }
   }
   
   @rss host rss.srv.simpson.id
