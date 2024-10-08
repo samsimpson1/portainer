@@ -1,0 +1,6 @@
+services:
+  catbot:
+    image: ghcr.io/samsimpson1/catbot:latest
+    restart: unless-stopped
+    volumes:
+      - /srv/containers/storage/ssd/secrets/temp_catbot.yaml:/app/config.yaml:ro
