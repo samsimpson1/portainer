@@ -1,6 +1,6 @@
 services:
   komga:
-    image: ghcr.io/gotson/komga:1.13.0
+    image: ghcr.io/gotson/komga:1.14.1
     restart: unless-stopped
     user: "568"
     volumes:
