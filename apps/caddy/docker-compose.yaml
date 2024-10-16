@@ -6,7 +6,9 @@ services:
     user: "568"
     restart: unless-stopped
     command: "caddy run -c /Caddyfile"
-    env_file: /srv/containers/storage/ssd/secrets/secrets.env
+    env_file:
+      - /srv/containers/storage/ssd/secrets/caddy-cloudflare.env
+      - /srv/containers/storage/ssd/secrets/caddy-security.env
     ports:
       - "80:80"
       - "443:443"
@@ -31,7 +33,9 @@ services:
     user: "568"
     restart: unless-stopped
     command: "caddy run -c /Caddyfile"
-    env_file: /srv/containers/storage/ssd/secrets/secrets.env
+    env_file:
+      - /srv/containers/storage/ssd/secrets/caddy-cloudflare.env
+      - /srv/containers/storage/ssd/secrets/caddy-security.env
     ports:
       - "6996:6996"
       - "6997:6997"
