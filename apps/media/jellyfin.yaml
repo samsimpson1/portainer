@@ -1,0 +1,14 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    restart: unless-stopped
+    user: "568"
+    network_mode: host
+    environment:
+      - JELLYFIN_PublishedServerUrl=https://jellyfin.srv.simpson.id
+    volumes:
+      - /srv/containers/storage/hdd/media:/media:ro
+      - /srv/containers/storage/ssd/jellyfin/config:/config:rw
+      - /srv/containers/storage/ssd/jellyfin/cache:/cache:rw
+    devices:
+      - /dev/dri:/dev/dri

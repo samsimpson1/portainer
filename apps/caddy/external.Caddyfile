@@ -76,6 +76,11 @@
     reverse_proxy http://home-assistant:8123
   }
 
+  @jellyfin host jellyfin.srv.simpson.id
+  handle @jellyfin {
+    reverse_proxy http://jellyfin:8096
+  }
+
   @komga host comics.srv.simpson.id
   handle @komga {
     reverse_proxy http://komga:25600

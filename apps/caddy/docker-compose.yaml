@@ -49,6 +49,7 @@ services:
       - freshrss
       - garage
       - home-assistant
+      - jellyfin
       - komga
       - navidrome
       - overseerr
