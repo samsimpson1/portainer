@@ -11,3 +11,4 @@ include:
   - apps/pathfinder/docker-compose.yaml
   - apps/plex/docker-compose.yaml
   - apps/samba/docker-compose.yaml
+  - apps/stonks/docker-compose.yaml

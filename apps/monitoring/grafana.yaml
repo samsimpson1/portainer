@@ -4,6 +4,7 @@ services:
     restart: unless-stopped
     user: "568"
     environment:
-      - GF_SERVER_ROOT_URL=https://grafana.int.simpson.id
+      - GF_SERVER_ROOT_URL=https://grafana.srv.simpson.id
     volumes:
       - /srv/containers/storage/ssd/grafana:/var/lib/grafana
+      - /srv/containers/storage/ssd/stonks:/stonks

@@ -70,6 +70,11 @@
   handle @audiobookshelf {
     reverse_proxy http://audiobookshelf:8080
   }
+
+  @grafana host grafana.srv.simpson.id
+  handle @grafana {
+    reverse_proxy http://grafana:3000
+  }
   
   @hass host hass.srv.simpson.id
   handle @hass {

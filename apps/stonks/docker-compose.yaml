@@ -1,0 +1,6 @@
+services:
+  stonks-scraper:
+    build: .
+    user: "568"
+    volumes:
+      - /srv/containers/storage/ssd/stonks:/data
