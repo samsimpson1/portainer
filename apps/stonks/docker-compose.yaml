@@ -1,6 +1,7 @@
 services:
   stonks-scraper:
     build: .
+    restart: unless-stopped
     user: "568"
     volumes:
       - /srv/containers/storage/ssd/stonks:/data
