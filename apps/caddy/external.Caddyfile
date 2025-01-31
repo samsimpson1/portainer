@@ -45,6 +45,9 @@
       inject headers with claims
 
       bypass uri suffix /feed.xml
+      bypass uri suffix /feed_image.jpg
+      bypass uri suffix /stream.mp4
+      bypass uri suffix /episode_image.jpg
     }
   }
 }
