@@ -5,7 +5,7 @@ services:
     volumes:
       - /srv/containers/storage/pathfinder/redis:/data
   pathfinder-mariadb:
-    image: mariadb:11.4
+    image: mariadb:11.7
     restart: unless-stopped
     env_file: /srv/containers/storage/ssd/secrets/Pathfinder.env
     volumes:
