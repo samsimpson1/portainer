@@ -3,6 +3,7 @@ include:
   - audiobookshelf.yaml
   - jellyfin.yaml
   - komga.yaml
+  - lms.yaml
   - navidrome.yaml
   - overseerr.yaml
   - pinchflat.yaml

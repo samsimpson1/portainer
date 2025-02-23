@@ -1,0 +1,17 @@
+services:
+  lms:
+    image: lmscommunity/lyrionmusicserver:9.1.0
+    restart: unless-stopped
+    environment:
+      - PUID=568
+      - PGID=568
+    network_mode: host
+    ports:
+      - 9002:9002/tcp
+      - 9090:9090/tcp
+      - 3483:3483/tcp
+      - 3483:3483/udp
+    volumes:
+      - /srv/containers/storage/hdd/media/music:/music:ro
+      - /srv/containers/storage/ssd/lms/config:/config:rw
+      - /srv/containers/storage/ssd/lms/playlists:/playlists:rw
